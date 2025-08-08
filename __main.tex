@@ -1,0 +1,106 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage[english]{babel}   % Spellingcorrectie en titels in NL
+\usepackage{csquotes}
+\usepackage{graphicx}       % Pakket voor afbeeldingen
+\usepackage[colorlinks, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+\hypersetup{pdfnewwindow=true}
+\hypersetup{breaklinks=true}
+\usepackage{amsmath}
+\usepackage{geometry}% Pakket voor pagina-indeling
+\usepackage{amssymb} % griekse letters
+\usepackage{grffile} % Allow graphics with spaces and multiple dots
+\usepackage[export]{adjustbox}
+\usepackage{attachfile2}
+\usepackage[paper=A4,pagesize]{typearea}
+\geometry{tmargin=3cm, bmargin=2.5cm, lmargin=2.5cm, rmargin=2.5cm}
+\usepackage{todonotes}      % Pakket voor figuur 'placeholders', commentaar aanbrengen
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{caption}
+\usepackage{subcaption}
+\DeclareCaptionFormat{custom}
+{
+    \textit{#1#2#3}
+}
+\captionsetup{format=custom}
+\usepackage{ifthen}
+\usepackage{amsmath}        % Pakket voor vergelijkingen
+\usepackage{floatrow}
+\usepackage{rotating}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\setlength\parindent{0pt}   % geen indent voor heel het document
+\floatsetup[table]{capposition=bottom}     % Pakket dat bovenschriften creëert bij tabellen ipv de standaard onderschriften.
+\usepackage{titlesec}
+\titleformat{\chapter}                             % command to format
+  {\normalfont\huge\bfseries}                      % format for the whole title
+  {\thechapter}                                    % what to print as the label
+  {1em}                                            % space between label and title
+  {} 
+
+\usepackage[
+sorting=none,
+style=apa,
+maxbibnames=99,
+backend=biber,
+date=long,
+]{biblatex}
+\addbibresource{references.bib}
+\DeclareBibliographyAlias{video}{online}
+\DeclareFieldFormat{howpublished}{#1}
+
+\graphicspath{ {Images/} }
+
+\usepackage{tgpagella}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\setlength{\tabcolsep}{2pt} % narrower column gap
+\setlength{\fboxsep}{1pt}   % minimal padding around images
+
+\begin{document}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\thispagestyle{empty}
+
+
+\input{0. titlepage}
+\newpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+  \begin{minipage}{0.8\textwidth}
+    \centering
+    \justifying
+    \noindent \copyright  2025 KU Leuven – Faculty of Engineering Science\\
+    Published by Matijs Peeters, Faculty of Engineering Science,\\ Kasteelpark Arenberg 1 bus 2200, B-3001 Leuven\\
+    All rights reserved. No part of the publication may be reproduced in any form by print, photoprint, microfilm, electronic or any other means without written permission from the publisher.\\
+    This publication contains the study work of a student in the context of the academic training and assessment. After this assessment no correction of the study work took place.
+  \end{minipage}
+\end{center}
+\vspace*{0pt}
+\newpage
+
+\tableofcontents
+\addcontentsline{toc}{section}{Table of contents}
+\input{1. Abstract}
+\newpage
+\listoffigures
+\addcontentsline{toc}{section}{Lijst van figuren}
+\listoftables
+\addcontentsline{toc}{section}{Lijst van tabellen}
+\newpage
+
+\input{2. Introduction}
+\input{3. Background}
+\input{4. Literature}
+\input{5. Development}
+\input{6. Methodology}
+\input{7. Results}
+\input{8. Discussion}
+\input{9. Conclusion}
+\input{10. References}
+\input{11. Appendix}
+
+\end{document}

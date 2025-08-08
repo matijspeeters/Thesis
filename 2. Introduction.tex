@@ -1,0 +1,44 @@
+\chapter{Introduction}
+In de inleiding: alle termen en concepten kaderen + stukje literatuur tonen.
+
+Algemene context: architectuurwereld in Vlaanderen.
+
+Hier verwijzen naar een probleem. Kijk naar andere publicaties, en steel hun concept. Zet hier ook de REFERENTIE bij; je kan die later eventueel nog deleten.
+Als die paper niet over het probleem gaat, en aantoont dat dat probleem er is, niet refereren.
+over dat probleem mag ook al research gedaan zijn.
+
+Suggereer een oplossing (die zich ergens anders evt al heeft voorgedaan) 
+en evt een klein stuk van de oplossing voorstellen
+
+bij mij: die LoRA modellen zijn nog niet op kleine schaal uitgetest.
+
+Contributies (de wetenschappelijke bijdrage a/d wetenschap van wat ik doe)
+
+Significantie \\
+\\
+Explain the broad context of the architectural world in Flanders
+\\
+\\
+\section{The use of LoRA models in the world of architecture}
+Although LoRA (\cite{hu_lora_2021}) emerged only in october 2021, several architects and architectural firms are already exploring its potential. Examples of these include Ismail Seleit (\cite{ismail_seleit_home_nodate}), who trains them on a variety of visual styles, and MVRDV (\cite{show_it_better_how_2024}), a global architectural office based in the Netherlands. \\
+Several LoRA models have also been trained to replicate the style of large international offices of 'starchitects' such as Zaha Hadid \autocite{tangbohu_designed_2025}, Frank Gehry \autocite{laushine_frankgehryincuprum-lora_flux-architecture_2024}, and Rem Koolhaas (\cite{tangbohu_designed_2024}). LoRA can replicate the styles of these architects, however this is not the right way to use them, as Ismail Seleit explained in an episode of the podcast of Architech Network of 25 july 2024 \autocite{architech_network_ep_2024}. By attempting to replicate the existing style of an architectural office, it limits the potential of the generated images to inspire the architects of that same firm and provide them with new ideas.\\
+\\
+In the Flemish architectural landscape, there is a growing interest in using AI in the design process. This is illustrated by events like the New Year's reception of the 'Orde van Architecten' being centered around AI in architecture. On the smaller scale of Flemish architectural design firms, these models have not been tested yet. Flemish architects typically work very 'site-based', as opposed to imposing their own style on a new project every time they create a new one. This demands for a new approach, as it is hard for LoRA's to replicate this style.\\
+\\
+There are two considerations to make here:\\ 
+1. Training a LoRA on an entire office does not yield interesting results;\\
+2. Training a LoRA on a Flemish office in particular is a hard task, as there often are not many available images to train on.\\
+\\
+In an attempt to close both gaps and enable LoRA models to be applied in a useful way in the design processes of Flemish architects and architectural offices, this thesis defines a new type of concept to train a LoRA on: '\textbf{architectural design patterns}'. \\
+%Philip Ball in his book 'The Self-Made Tapestry: Pattern Formation in Nature' defines these patterns in a simple and elegant way: ‘arrays of units that are similar but not necessarily identical, and which repeat but not necessarily regularly or with a well-defined symmetry’.\\
+These patterns are visually distinctive patterns, materials or objects that Flemish architects might repeatedly use in their projects. LoRA models can easily understand these concepts, so that it is possible to train them with as little as 12-15 input images.\\
+\\
+A pattern has the following attributes: \\
+- visually distinct\\
+- rare but repeatable \\
+- when trained in a LoRA and replicated in the generated images, it has a somewhat significant added contribution to the style of the architect.
+
+
+\section{Research questions}\label{sec:research questions}
+
+\textbf{1. What qualifies a mannerism that can be used to train a LoRA?\\~\\2. How does one train a LoRA to accurately reflect these mannerisms?\\~\\3. How might these LoRAs, trained on their own mannerisms, help Flemish architects in the architectural design process?}
