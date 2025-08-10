@@ -252,9 +252,9 @@ To generate images based on this sketch, the architect chose to include all 3 Lo
     \caption{The second original image provided by architect A (a) and the canny-preprocessed image (b).}
     \label{fig:placeholder}
 \end{figure}
-For this sketch, the architect provided a view of the rear facade of the same building. He chose to only use the 3D-effect LoRA, for the terraces and balconies.\\
+For the second sketch, the architect provided a view of the rear facade of the same building. He chose to only use the 3D-effect LoRA, for the terraces and balconies.\\
 Creating the first images, the GPT interpreted the lines on the adjacent houses as a canal, including it in the prompt. The diffusion model, then, overinterpreted this, generating the building next to a canal, as can be seen in figure \ref{fig:lora-comparison-2wide}. After this, the prompt was changed and these images were generated 
-\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
 \begin{figure}[H]
   \centering
   {\footnotesize
@@ -274,12 +274,64 @@ Creating the first images, the GPT interpreted the lines on the adjacent houses 
   \caption{Comparison of results with and without LoRA, generated from architect A's second sketch.}
   \label{fig:lora-comparison-2wide}
 \end{figure}
-After this, the researcher attempted to generate images with a depth map preprocessor (figure \ref{fig:depth map}).
+After this, the researcher generated images with a depth map preprocessor (figure \ref{fig:depth map}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\linewidth]{Images/Results/Architect-A_unstructured-phase/sketches/sketch_2_preprocessed_2.png}
     \caption{The depth map based on architect A's second sketch.}
     \label{fig:depth map}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  {\footnotesize
+  \renewcommand{\arraystretch}{1.1}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{c c c c}
+    \textbf{With LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-A_unstructured-phase/generated_images/2/Met_lora_00015_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-A_unstructured-phase/generated_images/2/Met_lora_00016_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-A_unstructured-phase/generated_images/2/Met_lora_00017_.png} \\
+
+    \textbf{Without LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-A_unstructured-phase/generated_images/2/Zonder_lora_00015_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-A_unstructured-phase/generated_images/2/Zonder_lora_00016_.png} & \includegraphics[width=0.25\textwidth]{Images/Results/Architect-A_unstructured-phase/generated_images/2/Zonder_lora_00017_.png} \\
+  \end{tabular}
+  }
+  \caption{Comparison of results with and without LoRA, generated from architect A's second sketch using a depth map preprocessor.}
+  \label{fig:lora-comparison-2wide}
+\end{figure}
+\subsubsection{Sketch 3}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/Results/Architect-A_unstructured-phase/sketches/sketch_3.jpeg}
+        \caption{}
+        \label{A-unstructured-3-sketch}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering 
+        \includegraphics[width=\textwidth]{Images/Results/Architect-A_unstructured-phase/sketches/sketch_3_preprocessed.jpg}
+        \caption{}
+        \label{A-unstructured-3-sketch-prep}
+    \end{subfigure}
+    \caption{The third original image provided by architect A (a) and the canny-preprocessed image (b).}
+    \label{fig:placeholder}
+\end{figure}
+For the third sketch, the architect provided a clearer sketch for a new project. For this image, the architect chose to use the geleding LoRA, and prompted to make a material distinction between the ground floor and the first floor.
+\begin{figure}[H]
+  \centering
+  {\footnotesize
+  \renewcommand{\arraystretch}{1.1}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{c c c c}
+    \textbf{With LoRA} & \includegraphics[width=0.25\textwidth]{Images/Results/Architect-A_unstructured-phase/generated_images/3/Met_lora_00019_.png} & \includegraphics[width=0.25\textwidth]{Images/Results/Architect-A_unstructured-phase/generated_images/3/Met_lora_00023_.png} & \includegraphics[width=0.25\textwidth]{Images/Results/Architect-A_unstructured-phase/generated_images/3/Met_lora_00026_.png} \\
+    \textbf{Without LoRA} & \includegraphics[width=0.25\textwidth]{Images/Results/Architect-A_unstructured-phase/generated_images/3/Zonder_lora_00019_.png} & \includegraphics[width=0.25\textwidth]{Images/Results/Architect-A_unstructured-phase/generated_images/3/Zonder_lora_00023_.png} & \includegraphics[width=0.25\textwidth]{Images/Results/Architect-A_unstructured-phase/generated_images/3/Zonder_lora_00026_.png} \\
+  \end{tabular}
+  }
+  \caption{Comparison of results with and without LoRA, generated from architect A's third sketch.}
+  \label{fig:A-generatedimgs-sketch3}
 \end{figure}
 
 \section{Architect B} \label{sec:results-B}
@@ -489,7 +541,241 @@ Architect B preferred one image during the design phase (figure \ref{fig:B-preli
     \caption{Architect B's preferred images in the presentation phase.}
     \label{fig:B-presentation-preferred}
 \end{figure}
-\subsection{Free phase}
+
+\subsection{Unstructured phase}
+During the unstructured phase, architect B provided several images of projects that
+their office is working on. While architect A provided 3D sketches, architect B purely provided screenshots of 3D models.\\
+This section portrays a representative selection of AI-generated images based on the architects’ screenshots, providing an oversight of how this tool worked when generating from these screenshots.
+All images were generated by uploading the screenshot to the custom GPT, and asking it
+to write a prompt for that building. Then, this prompt was used in combination with
+ControlNet, to generate images based on this screenshot. Two preprocessors were used for
+this: canny edge detection and depth mapping.
+For each screenshot, only a representative selection of generated images (with and without
+LoRA) is shown here. All generated images can be found in the appendix of this thesis
+(chapter 9).
+\subsubsection{Screenshot 1}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/Results/Architect-B_unstructured-phase/screenshots/screenshot_1.png}
+        \caption{}
+        \label{A-unstructured-1-sketch}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering 
+        \includegraphics[width=\textwidth]{Images/Results/Architect-B_unstructured-phase/screenshots/screenshot_1_preprocessed.png}
+        \caption{}
+        \label{A-unstructured-1-sketch-prep}
+    \end{subfigure}
+    \caption{The first original image provided by architect B (a) and the canny-preprocessed image (b).}
+    \label{fig:B-screenshot-1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  {\footnotesize
+  \renewcommand{\arraystretch}{1.1}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{c c c c}
+    \textbf{With LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/1/Met_lora_00001_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/1/Met_lora_00002_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/1/Met_lora_00003_.png} \\
+
+    \textbf{Without LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/1/Zonder_lora_00001_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/1/Zonder_lora_00002_.png} & \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/1/Zonder_lora_00003_.png} \\
+  \end{tabular}
+  }
+  \caption{Comparison of results with and without LoRA, generated from architect B's first sketch.}
+  \label{fig:lora-comparison-2wide}
+\end{figure}
+
+\subsubsection{Screenshot 2}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/Results/Architect-B_unstructured-phase/screenshots/screenshot_2.png}
+        \caption{}
+        \label{A-unstructured-1-sketch}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering 
+        \includegraphics[width=\textwidth]{Images/Results/Architect-B_unstructured-phase/screenshots/screenshot_2_preprocessed.png}
+        \caption{}
+        \label{A-unstructured-1-sketch-prep}
+    \end{subfigure}
+    \caption{The second original image provided by architect B (a) and the canny-preprocessed image (b).}
+    \label{fig:B-screenshot-2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  {\footnotesize
+  \renewcommand{\arraystretch}{1.1}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{c c c c}
+    \textbf{With LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/2/Met_lora_00004_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/2/Met_lora_00005_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/2/Met_lora_00007_.png} \\
+
+    \textbf{Without LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/2/Zonder_lora_00004_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/2/Zonder_lora_00005_.png} & \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/2/Zonder_lora_00007_.png} \\
+  \end{tabular}
+  }
+  \caption{Comparison of results with and without LoRA, generated from architect B's second sketch.}
+  \label{fig:lora-comparison-2wide}
+\end{figure}
+
+\subsubsection{Screenshot 3}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/Results/Architect-B_unstructured-phase/screenshots/screenshot_3.png}
+        \caption{}
+        \label{A-unstructured-1-sketch}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering 
+        \includegraphics[width=\textwidth]{Images/Results/Architect-B_unstructured-phase/screenshots/screenshot_3_preprocessed.png}
+        \caption{}
+        \label{A-unstructured-1-sketch-prep}
+    \end{subfigure}
+    \caption{The third original image provided by architect B (a) and the canny-preprocessed image (b).}
+    \label{fig:B-screenshot-3}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  {\footnotesize
+  \renewcommand{\arraystretch}{1.1}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{c c c c}
+    \textbf{With LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/3/Met_lora_00010_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/3/Met_lora_00012_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/3/Met_lora_00019_.png} \\
+
+    \textbf{Without LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/3/Zonder_lora_00010_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/3/Zonder_lora_00012_.png} & \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/3/Zonder_lora_00019_.png} \\
+  \end{tabular}
+  }
+  \caption{Comparison of results with and without LoRA, generated from architect B's third sketch.}
+  \label{fig:lora-comparison-2wide}
+\end{figure}
+
+\subsubsection{Screenshot 4}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/Results/Architect-B_unstructured-phase/screenshots/screenshot_4.png}
+        \caption{}
+        \label{A-unstructured-1-sketch}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering 
+        \includegraphics[width=\textwidth]{Images/Results/Architect-B_unstructured-phase/screenshots/screenshot_4_preprocessed.png}
+        \caption{}
+        \label{A-unstructured-1-sketch-prep}
+    \end{subfigure}
+    \caption{The fourth original image provided by architect B (a) and the canny-preprocessed image (b).}
+    \label{fig:B-screenshot-4}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  {\footnotesize
+  \renewcommand{\arraystretch}{1.1}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{c c c c}
+    \textbf{With LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/4/Met_lora_00020_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/4/Met_lora_00021_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/4/Met_lora_00022_.png} \\
+
+    \textbf{Without LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/4/Zonder_lora_00021_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/4/Zonder_lora_00022_.png} & \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/4/Zonder_lora_00023_.png} \\
+  \end{tabular}
+  }
+  \caption{Comparison of results with and without LoRA, generated from architect B's fourth sketch.}
+  \label{fig:lora-comparison-2wide}
+\end{figure}
+
+And after some time, the researcher tried it out with a depth map as well:
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\linewidth]{Images/Results/Architect-B_unstructured-phase/screenshots/screenshot_4_preprocessed_2.png}
+    \caption{The depth map based on architect B's fourth screenshot.}
+    \label{fig:B-screenshot-4-2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  {\footnotesize
+  \renewcommand{\arraystretch}{1.1}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{c c c c}
+    \textbf{With LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/4/Met_lora_00023_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/4/Met_lora_00024_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/4/Met_lora_00027_.png} \\
+
+    \textbf{Without LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/4/Zonder_lora_00024_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/4/Zonder_lora_00025_.png} & \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/4/Zonder_lora_00028_.png} \\
+  \end{tabular}
+  }
+  \caption{Comparison of results with and without LoRA, generated from architect B's fourth sketch, generated from a depth map.}
+  \label{fig:lora-comparison-2wide}
+\end{figure}
+
+\subsubsection{Screenshot 5}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/Results/Architect-B_unstructured-phase/screenshots/screenshot_5.png}
+        \caption{}
+        \label{fig:B-screenshot-5-a}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering 
+        \includegraphics[width=\textwidth]{Images/Results/Architect-B_unstructured-phase/screenshots/screenshot_5_preprocessed.png}
+        \caption{}
+        \label{fig:B-screenshot-5-prep}
+    \end{subfigure}
+    \caption{The fourth original image provided by architect B (a) and the canny-preprocessed image (b).}
+    \label{fig:B-screenshot-5}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  {\footnotesize
+  \renewcommand{\arraystretch}{1.1}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{c c c c}
+    \textbf{With LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/5/Met_lora_00028_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/5/Met_lora_00029_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/5/Met_lora_00031_.png} \\
+
+    \textbf{Without LoRA} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/5/Zonder_lora_00029_.png} &
+    \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/5/Zonder_lora_00030_.png} & \includegraphics[width=0.25\textwidth]{Images/Results/Architect-B_unstructured-phase/generated_images/5/Zonder_lora_00032_.png} \\
+  \end{tabular}
+  }
+  \caption{Comparison of results with and without LoRA, generated from architect B's fifth sketch.}
+  \label{fig:lora-comparison-2wide}
+\end{figure}
+
 
 \section{Thematic analysis of the evaluation sessions}\label{sec:results-analysis}
 \subsection{Reasoning behind preferred images}
@@ -500,9 +786,9 @@ The following tables \ref{tab:8-1} and \ref{tab:8-2} outline all concepts that t
     \begin{tabular}{l||l|l}
         \textbf{Design stage} & \textbf{Starting images} & \textbf{Generated images}\\
         \hline
-        Sketch design & Materiality, connection, 3D-effect & storytelling, volumetry, 3D-effect\\
-        Preliminary design & Materiality, 3D-effect & Composition, Proportions, 3D-effect\\
-        Presentation & Connection, Detailing, Stampbeton & Stampbeton, detailing, volumetry\\
+        Sketch design & Materiality, connection, \textbf{3D-effect} & storytelling, volumetry, \textbf{3D-effect}\\
+        Preliminary design & Materiality, \textbf{3D-effect} & Composition, Proportions, \textbf{3D-effect}\\
+        Presentation & Connection, Detailing, \textbf{Stampbeton} & \textbf{Stampbeton}, detailing, volumetry\\
     \end{tabular}
     \caption{Architect A's reasoning behind his favourite images.}
     \label{tab:8-1}
@@ -524,58 +810,58 @@ The following tables \ref{tab:8-1} and \ref{tab:8-2} outline all concepts that t
 During the sessions, there were several moments when the architect asked for something that the tool wasn't really built for.
 \subsubsection{Making modifications on a generated image}
 During the sketch design phase of 
-\subsubsection{}
-\begin{table}[h]
-\centering
-\begin{tabular}{|l|l|l|l|l|l|}
+% \subsubsection{}
+% \begin{table}[h]
+% \centering
+% \begin{tabular}{|l|l|l|l|l|l|}
 
-\hline
- & & & Sketch design & Preliminary design & Presentation \\
- \hline
+% \hline
+%  & & & Sketch design & Preliminary design & Presentation \\
+%  \hline
 
-\multirow{4}{}{Start} & \multirow{2}{}{With LORA} & Vincent & 1 & 1 & 1 \\ 
+% \multirow{4}{}{Start} & \multirow{2}{}{With LORA} & Vincent & 1 & 1 & 1 \\ 
 
-\cline{3-6}
-& & Matthias & 1 & 1 & 1 \\
+% \cline{3-6}
+% & & Matthias & 1 & 1 & 1 \\
 
-\cline{2-6}
-& \multirow{2}{*}{Without LORA} & Vincent & 1 & 1 & 0 \\ 
+% \cline{2-6}
+% & \multirow{2}{*}{Without LORA} & Vincent & 1 & 1 & 0 \\ 
 
-\cline{3-6}
-& & Matthias & 0 & 0 & 0\\ 
+% \cline{3-6}
+% & & Matthias & 0 & 0 & 0\\ 
 
-\hline
-\hline
+% \hline
+% \hline
 
-\multirow{4}{*}{During design} 
-  & \multirow{2}{*}{With LORA} 
-      & Vincent & 1 & & \\ \cline{3-6}
-  &                                  
-      & Matthias & & & \\ \cline{2-6}
-  & \multirow{2}{*}{Without LORA} 
-      & Vincent & 1 & & \\ \cline{3-6}
-  &                                  
-      & Matthias & & & \\ \hline
-\end{tabular}
-\caption{List of when the architects chose their favourite images.}
-\label{tab:design-phases}
-\end{table}
+% \multirow{4}{*}{During design} 
+%   & \multirow{2}{*}{With LORA} 
+%       & Vincent & 1 & & \\ \cline{3-6}
+%   &                                  
+%       & Matthias & & & \\ \cline{2-6}
+%   & \multirow{2}{*}{Without LORA} 
+%       & Vincent & 1 & & \\ \cline{3-6}
+%   &                                  
+%       & Matthias & & & \\ \hline
+% \end{tabular}
+% \caption{List of when the architects chose their favourite images.}
+% \label{tab:design-phases}
+% \end{table}
 
-\begin{table}[h]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
+% \begin{table}[h]
+% \centering
+% \begin{tabular}{|l|l|l|l|l|}
 
-\hline
-& & Sketch design & Preliminary design & Presentation \\
-\hline
+% \hline
+% & & Sketch design & Preliminary design & Presentation \\
+% \hline
 
-\multirow{2}{*}{Vincent} & With LoRA & & & \\
-\cline{2-5}
-& Without LoRA & & & \\
-\hline
-\multirow{2}{*}{Matthias} & With LoRA & & & \\
-\cline{2-5}
-& Without LoRA & & & \\
-\hline
-\end{tabular}
-\end{table}
+% \multirow{2}{*}{Vincent} & With LoRA & & & \\
+% \cline{2-5}
+% & Without LoRA & & & \\
+% \hline
+% \multirow{2}{*}{Matthias} & With LoRA & & & \\
+% \cline{2-5}
+% & Without LoRA & & & \\
+% \hline
+% \end{tabular}
+% \end{table}

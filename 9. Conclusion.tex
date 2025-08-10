@@ -1,1 +1,10 @@
 \chapter{Conclusion}
+
+This thesis delved into the topic of fine-tuning diffusion models, to generate images which are tied closer to an office's own style.\\
+Placing itself in the context of Flemish architectural practice, the idea to train on an office's style did not turn out very well, since Flemish offices often don't portray a 'house style'. Rather, most Belgian, and especially Flemish practices love the idea of creating more context-specific architecture, heavily based on the spatial and social context of the site.\\
+\\
+The core idea of this thesis, therefore, was to define a new concept, 'mannerisms', that encompass simple concepts that architects might use in their designs, to make the process of training a LoRA easier and quicker. In this way, this study's purpose was to find out whether these LoRA models could be useful, specifically to Flemish architects.\\
+\\
+This study found that some concepts work better than others to train LoRAs on; namely, more abstract concepts work better, and materialistic concepts work the best among the 6 LoRAs trained in this thesis. The other 4 concepts, being more compositional or formal, were easier to prompt using the base model FLUX.1 and thus don't work very well in a LoRA model. For such purposes, the use of ControlNet or similar geometry-conserving methods could be a better solution.\\
+\\
+It also uncovered some caviats that AI-tools like these still have to deal with; there are some requests that the architects pose, that the tool was not built for. 

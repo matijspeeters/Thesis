@@ -19,22 +19,28 @@ This study investigated whether LoRA models, trained on architectural mannerisms
 
 \section{Performance of the LoRA models}
 
-This study's results suggest that the \textbf{Modulariteit} and \textbf{Stampbeton} LoRAs had more consistent and reliably useful outcomes than those that were trained on compositional or formal aspects (\textbf{3D-effect, Geleding, Plintwerking, Ghoek}).\\~\\
-I observed this in two segments of the results:
+This study finds that the \textbf{Modulariteit} and \textbf{Stampbeton} LoRAs had more consistent and reliably useful outcomes than those that were trained on compositional or formal aspects (3D-effect, Geleding, Plintwerking, Ghoek).\\~\\
+This can be observed in two segments of the results:
 \begin{itemize}
-    \item Architect A favored two images generated using the \textbf{stampbeton} LoRA in the presentation phase (figure \ref{fig:A-presentation-selected}).
-    \item Architect B preferred images generated using the \textbf{modulariteit} LoRA in the presentation phase (figure \ref{fig:B-presentation-preferred})
+    \item Architect A favored two images generated using the stampbeton LoRA in the presentation phase (figure \ref{fig:A-presentation-selected}).
+    \item Architect B preferred images generated using the modulariteit LoRA in the presentation phase (figure \ref{fig:B-presentation-preferred}).
 \end{itemize}
+
 \todo{Relateren met literatuur! Waarom architecten afbeeldingen kiezen}
 Both LoRA models, in this study, came forward more during the 'presentation' design phase. For the \textit{Stampbeton} LoRA, this can be expected: materiality is a concept that architects usually think about after designing more important concepts like the volumetry and the composition of the building. Since the 'design' was already finished in this phase, this left more room for the architect to think about the materiality. For the \textit{Modulariteit} LoRA, however, this result is somewhat unexpected, since modularity is a concept that is thought about more in the preliminary design phase. \\
-A possible explanation could be that the AI-generated images invited a shift from convergent thinking, which would be expected in a presentation phase, to divergent thinking. The architect was likely driven by novelty bias, caused by the novelty of the images. 
+A possible explanation could be that the AI-generated images invited a shift from convergent thinking, which would be expected in a presentation phase, to more divergent thinking. The architect was likely driven by novelty bias, caused by the novelty of the images. 
 
-The results here don't fully mirror this statement, because Architect A often chose for a 3D-effect in the facade. 
-A possible reason for this, is that these concepts are more novel to the base model of FLUX, and it therefore learns them more easily. The concepts that are easier to prompt by default, such as a curved corner (\textbf{Ghoek}), are harder to put in a LoRA because the base model already has a notion of it. So the concept gets blurry. Concepts that are harder to prompt for the base model seem to work better in a LoRA. The two LoRAs that portrayed this the best in this thesis were \textbf{Stampbeton}, which has a very typical look, and \textbf{Modulariteit}, which is a more non-tangible concept.\\~\\
+The results here don't fully mirror this statement, because Architect A often chose for a 3D-effect in the facade.
+
+A possible reason for this, is that these concepts are more novel to the base model of FLUX, and it therefore learns them more easily. The concepts that are easier to prompt by default, such as a curved corner (\textbf{Ghoek}), are harder to usefully train a LoRA on because the base model already has a notion of it. The concept thus gets blurry. Concepts that are harder to prompt for the base model seem to work better in a LoRA.\\~\\
 % Typically, the AI model does not produce the required outcomes accurately on the first try.
 
-\section{choosing of preferred images}
+\section{Choosing of preferred images}
 Andrew: "En anderzijds zie je dat het niet zo eenduidig is, want als het gaat over favorieten kiezen ze eig op basis van eigenschappen die niet in de lora zitten. Dat is mss uw discussiepunt nr 2."
+
+When architects were asked to choose their favourite images from a certain phase, they often chose those based on attributes not specifically trained in the LoRAs. During both sessions, they also consistently stated to find the LoRA-generated images to have more architectural sensitivity than the images without LoRA.
+
+
 
 \section{Human-AI interaction}
 
