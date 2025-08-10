@@ -1,5 +1,5 @@
 \chapter{Discussion}
-This study investigated the utilization, a potential use case of LoRAs among Flemish architects.
+This study investigated whether LoRA models, trained on architectural mannerisms, could meaningfully assist Flemish architects in their design process. This chapter discusses both the performance of the LoRA models and the human-AI interaction observed during the evaluation sessions.
 
 % \section{How the architects used the tool}
 % In the user study, there were several occasions where the architect requested a modification on the provided image, something this tool did not account for since it was primarily built to generate new images and explore ideas.\\
@@ -17,7 +17,39 @@ This study investigated the utilization, a potential use case of LoRAs among Fle
 % The images can help architects to come out of the fixation problem in architectural design, and can challenge them to question things they thought of as trivial.
 % \subsection{verification of ideas}
 
-\section{}
+\section{Performance of the LoRA models}
+
+This study's results suggest that the \textbf{Modulariteit} and \textbf{Stampbeton} LoRAs had more consistent and reliably useful outcomes than those that were trained on compositional or formal aspects (\textbf{3D-effect, Geleding, Plintwerking, Ghoek}).\\~\\
+I observed this in two segments of the results:
+\begin{itemize}
+    \item Architect A favored two images generated using the \textbf{stampbeton} LoRA in the presentation phase (figure \ref{fig:A-presentation-selected}).
+    \item Architect B preferred images generated using the \textbf{modulariteit} LoRA in the presentation phase (figure \ref{fig:B-presentation-preferred})
+\end{itemize}
+\todo{Relateren met literatuur! Waarom architecten afbeeldingen kiezen}
+Both LoRA models, in this study, came forward more during the 'presentation' design phase. For the \textit{Stampbeton} LoRA, this can be expected: materiality is a concept that architects usually think about after designing more important concepts like the volumetry and the composition of the building. Since the 'design' was already finished in this phase, this left more room for the architect to think about the materiality. For the \textit{Modulariteit} LoRA, however, this result is somewhat unexpected, since modularity is a concept that is thought about more in the preliminary design phase. \\
+A possible explanation could be that the AI-generated images invited a shift from convergent thinking, which would be expected in a presentation phase, to divergent thinking. The architect was likely driven by novelty bias, caused by the novelty of the images. 
+
+The results here don't fully mirror this statement, because Architect A often chose for a 3D-effect in the facade. 
+A possible reason for this, is that these concepts are more novel to the base model of FLUX, and it therefore learns them more easily. The concepts that are easier to prompt by default, such as a curved corner (\textbf{Ghoek}), are harder to put in a LoRA because the base model already has a notion of it. So the concept gets blurry. Concepts that are harder to prompt for the base model seem to work better in a LoRA. The two LoRAs that portrayed this the best in this thesis were \textbf{Stampbeton}, which has a very typical look, and \textbf{Modulariteit}, which is a more non-tangible concept.\\~\\
+% Typically, the AI model does not produce the required outcomes accurately on the first try.
+
+\section{choosing of preferred images}
+Andrew: "En anderzijds zie je dat het niet zo eenduidig is, want als het gaat over favorieten kiezen ze eig op basis van eigenschappen die niet in de lora zitten. Dat is mss uw discussiepunt nr 2."
+
+\section{Human-AI interaction}
+
+My results show that the degree to which I was able to steer the design process using AI-generated images, was highly dependent on the nature of the architects' intent.\\~\\
+
+\section{Limitations of this study and future work}
+
+- prompts: I did not focus on prompt engineering, apart from creating a GPT. The quality of generated AI-images is highly dependent on the quality of the prompt (source); however, since for this study, multiple images had to be generated quickly, I resourced to this solution, which could quickly produce images. \\~\\
+- number of participants: the results from this study are not very generalizable, because I only got 2 participating architects, which were from different offices so cannot really be compared with each other. However, this was mainly an exploratory study, with very qualitative data, to find out how these LoRA models might be able to help Flemish architects design. \\~\\
+
+Furthermore, I brought a lot of my own bias into it, because the design sessions started with images that I generated and chose, and during the sessions I was the one who interpreted what the architect wanted; I was essentially an extension of the computer, kind of a 'translator' between the human and the machine.
 
 
-Typically, the AI model does not produce the required outcomes accurately on the first try.
+
+Furthermore, in generating images based on sketches of the architect, this tool shows
+
+\subsection{Modifying previously generated images}
+For example, in the preliminary design session of architect B, he asked to combine a certain aspect of an image, in this case the perspective, and 'project' it onto the other image. I tried to make this possible by asking the custom GPT to generate a prompt that does so. The generated images, however interesting, did not answer to his query. 

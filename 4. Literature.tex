@@ -1,5 +1,72 @@
-\chapter{Literature}
+\chapter{Literature review}
+This chapter reviews relevant literature in three key themes underpinning this research. First, it examines the role of images in architecture, not only as visual representations but as active agents in creative thinking and communication. Second, it examines Low-Rank Adaptation (LoRA) as an efficient method for fine-tuning text-to-image diffusion models, enabling targeted output images from small datasets, making the technique relevant for architectural applications. Finally, it situates the study within the context of Flemish architecture.
 
-\section{Baudoux et al.} 
+\section{The potential of AI-generated images in architecture}
 
-In the paper 'The benefits and challenges of AI image generators for architectural ideation: Study of an alternative human-machine co-creation exchange based on sketch recognition' \cite{baudoux_benefits_nodate}, the wizard of Oz-technique was used to emulate a design situation where the 'wizard' is regularly showing images to the architects. This paper shows that this kind of stimulation can help architects design. In this thesis, a similar approach is used to design together with architects. However, the technique is already developed. The researcher only serves as a middle person, communicating between the AI-model interface and the architect.
+% Papers die ik hier wil gebruiken:
+
+% \cite{baudoux_benefits_2024}
+% The technological partner (who is supplying images) is a relevant and potentially rich aid to ideation.
+
+% Architects order images when the architect already has a premise of an idea, but it’s still vague, and he/she’s looking for inspiration to find out exactly what form this idea will take.
+
+% The proposal was to avoid prompts (andere bron hiervoor?), but they found that there is a real need to be able to order specific images, as the designers made a real usage of this provided function. "The advantage of our system over text-to-image AI generators is that the “prompt” can simply be composed of three or four keywords, while the technological partner knows the project being designed and the creative direction in which the architect is heading. So there’s no need to specify all the details in a complex prompt."
+
+% "... a need previously unknown or underestimated in the literature: the need to evaluate sketched ideas by means of images simulating their real-life rendering, as well as the need for inspiration to materialize the premises of ideas that are still vague."
+
+% \cite{paananen_using_2024}
+% "Through standardized questionnaires on creativity support tools and group interviews, we learned that image generation could be a meaningful part of the design process when design constraints and imaginative ideation are carefully considered. Generative tools support the serendipitous discovery of ideas and an imaginative mindset, which can enrich the design process."
+
+% "In a 2013 lecture, the renowned contemporary architect Bernard Tschumi explained the role of visual media in architecture as “It is not about the images, it is what the images do.” [31]. As architecture can be seen as a field that communicates through images, it is the effect of the images that matter and what political and social impact they have. Therefore, image generation could be understood as a part of a more context-aware creative practice."
+
+% \cite{castro_pena_artificial_2021}
+% "There is a remarkable increase in the number of publications on the topic over time from 2015 onwards, with 85\% growth in the last 5 years compared with previous years"
+
+% \cite{duran_review_2025}
+% "Advances in open text-to-image and image-to-image diffusion models can democratize the design process by reducing the need for powerful hardware for realistic renderings or 3D modeling, enabling co-creation with AI in the design of new facades."
+
+% \cite{rombach_high-resolution_2022}
+% I want to cite this paper because it handles (latent) diffusion models, the kind of models I use in my thesis.
+
+% In the world of AI-assisted design (AIAD), ...
+
+% In the paper 'The benefits and challenges of AI image generators for architectural ideation: Study of an alternative human-machine co-creation exchange based on sketch recognition' \cite{baudoux_benefits_nodate}, the wizard of Oz-technique was used to emulate a design situation where the 'wizard' is regularly showing images to the architects. This paper shows that this kind of stimulation can help architects design. In this thesis, a similar approach is used to design together with architects. However, the technique is already developed. The researcher only serves as a middle person, communicating between the AI-model interface and the architect.
+\subsection{The increasing influence of images}
+Throughout its history, architectural practice has been underpinned by the use of visual representations - such as sketches, photographs, and images - to communicate ideas across all stages of the architectural process, from initial concept development to construction. In recent years, the role of images has considerably increased, especially within the architectural design phase, where they do not only function as illustrations, but can take an active role, providing architects with relevant references and stimulating novel ideas (\cite{bergera_architecture_2022}; \cite{halin_three_2003}).
+
+\subsection{AI image generation}
+Following the strong increase of research and development regarding artificial intelligence (AI), architects and researchers alike have showed interest in architectural AI applications, initially mainly focusing on attempting to converge on a single optimized outcome. However, since 2015, the overall emphasis of research lies more and more on interactive, generative approaches, that expand the designers solution space (\cite{castro_pena_artificial_2021}).\\
+%Highlighting that architects are willing to embrace this new technology.
+\subsection{Diffusion models}
+Several approaches exist for generating images using artificial intelligence. However, probabilistic diffusion models (DDPMs)(\cite{ho_denoising_2020}) outperform other generative AI technologies such as generative adversarial networks (GANs),  and Variational Auto-Encoders (VAEs). Especially latent diffusion models (\cite{rombach_high-resolution_2022}) have greatly enhanced the quality and efficiency of image generation, by reducing the dimensionality of the image data from pixel space to latent space, requiring less memory to create high-quality outputs (\cite{li_generative_2025}). There have especially been a lot of developments in text-to-image generation models (\cite{zhang_text--image_2023}), which use text as input and generate images as outputs. Examples include MidJourney (\cite{noauthor_midjourney_nodate}), FLUX (\cite{noauthor_black-forest-labsflux1-dev_2025}), Stable Diffusion (\cite{rombach_high-resolution_2022}), and Imagen (\cite{noauthor_imagen_nodate}), among others. These models facilitate generating images from text prompts in seconds, giving rise to a lot of potential use cases in the architecture industry.
+\subsection{The effect of text-to-image models on the architectural design process}
+Text-to-image models have been found to support the serendipitous discovery of novel ideas and an imaginative mindset, both of which can significantly enrich the design process (\cite{paananen_using_2024}). The images themselves do not necessarily serve as purely representational tools, but can provide a lot of creativity, especially in the early, conceptual stages of design.\\
+\\
+An important limitation of these tools, however, is that they can't conform very well to specific building regulations. This further strengthens the notion that these models work best in the early stages of design. Architects actually use it in this way: when they can order images, they do it when they already "have a premise of an idea, but it’s still vague, and he/she’s looking for inspiration to find out exactly what form this idea will take" (\cite{baudoux_benefits_2024}).\\
+\\
+AI text-to-image models relying heavily on text prompts (\cite{tan_using_2024}), another significant challenge is the skill treshold associated with effective prompt engineering (\cite{paananen_using_2024}). However, prompts are still needed to some extent; architects who are using AI-generating tools in their design process frequently express the need to order specific images, where a simple prompt is still needed (\cite{baudoux_benefits_2024}). This highlights the need to be able to control the generated images to some extent.
+
+Apart from generating new ideas, there is also a need to validate sketched concepts by realistic imagery based on architects' sketches, enabling validation of early ideas and proposals. Thus, text-to-image and image-to-image generation tools can not only function as a source of inspiration, but also as a tool for testing design decisions (\cite{baudoux_benefits_2024}).
+
+\section{Low-Rank Adaptation of diffusion models}
+
+\subsection{Fine-tuning of diffusion models}
+Most widely-spread diffusion models are examples of 'foundation models': they are trained on huge datasets and can handle a wide variety of image generation requests. However, for very specific queries that are not present in the general dataset, these models don't perform very well. An example is the replication of a certain architectural style, which, if possible, would make these tools more interesting for architects, as they could tailor them more to their needs. One possible solution would be to retrain the entire model; however, this would bring a high cost and require a lot of effort. 'Fine-tuning' of diffusion models can offer a more feasible solution, by adapting a pre-trained diffusion model to a specific task. 
+\subsection{Low-Rank Adaptation}
+Several fine-tuning techniques have already been developed, such as full finetuning, textual inversion (\cite{gal_image_2022}), LoRA (\cite{hu_lora_2021}), hypernetworks (\cite{huang_continual_2021}) and DreamBooth (\cite{ruiz_dreambooth_2022}). Dreambooth usually performs best among these methods, because it fine-tunes the entire model (\cite{chen_generating_2023}). For recent diffusion models, though, this would require a lot of storage space: as an example, the file size of FLUX.1 [dev] is 23.8 gigabytes (GB) (\cite{noauthor_black-forest-labsflux1-dev_2025}), meaning the finetuned DreamBooth-model could easily exceed 25 GB. \\
+Although not the very best method, LoRA could be a promising fine-tuning technique for architects because of its parameter efficiency (\cite{yang_low-rank_2024}). The finetuning process for LoRA models (or LoRAs, in short) is relatively fast and the LoRA model is not too large.
+
+\subsection{The use of LoRAs in architecture design}
+Indeed, there are various architects and firms who are already actively researching the possibility of  implementing LoRAs in their design process. Examples of these include Ismail Seleit (\cite{architech_network_ep_2024}), who is an associate architect at Foster + Partners and trains LoRAs on a variety of visual styles and concepts. The Dutch office MVRDV, a globalized architectural office based in the Netherlands, is also experimenting with this technology (\cite{show_it_better_how_2024}). \\
+Several LoRA models have also been trained by online users, to replicate the style of large international offices of 'starchitects' such as Zaha Hadid \autocite{tangbohu_designed_2025}, Frank Gehry \autocite{laushine_frankgehryincuprum-lora_flux-architecture_2024}, and Rem Koolhaas (\cite{tangbohu_designed_2024}). 
+
+%LoRA can replicate the styles of these architects, however this is not a very useful way to harness them. By attempting to replicate the existing style of an architectural office, it limits the potential of the generated images to inspire the architects of that same firm and provide them with new ideas. A more interesting approach would be to train project-specific LoRAs (\autocite{architech_network_ep_2024}).\\
+
+\section{The Belgian architectural landscape}
+
+\subsection{Historical context}
+In the mid-20th century, Belgium's modern architectural identity was often described in unflattering terms: architect Renaat Braem famously described his home country as the 'ugliest country in the world' (\cite{braem_het_1968}).\\
+Since then, the architectural landscape of Belgium has undergone significant transformation: particularly over the last two decades, key institutions such as Team Flemish Government Architect (\url{https://www.vlaamsbouwmeester.be/nl}) and the Flemish Architecture Institute (VAi) (\url{https://www.vai.be/en}) have had a substantial influence on Belgian architectural practice, which has its effect: Belgian architecture has gained international recognition for its context-specific approach (\cite{wainwright_flanders_2022};\cite{antonissen_continuity_2022}).
+
+\subsection{Current situation}
+Today, many Belgian, and especially Flemish, architects deliberately avoid maintaining a fixed 'personal' style in their architectural designs. Instead, they allow the architectural expression of each new project to be inspired by the site, the program and the social context (\cite{de_caigny_flanders_2024}). The aim of architecture is not to create a uniform portfolio, but rather to achieve a 'local identity' for each project. "In this way, Flemish building culture illustrates an understanding of architecture as a contribution to the generic architectural or urban tissue, not as an artefact or monument in itself." (\cite{antonissen_continuity_2022}, as cited from  \cite{avermaete_rereading_2016}).

@@ -1,11 +1,25 @@
 \documentclass[a4paper,12pt]{report}
 
-\usepackage[english]{babel}   % Spellingcorrectie en titels in NL
+\usepackage[english]{babel}
+\selectlanguage{english}
+
 \usepackage{csquotes}
-\usepackage{graphicx}       % Pakket voor afbeeldingen
-\usepackage[colorlinks, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
-\hypersetup{pdfnewwindow=true}
-\hypersetup{breaklinks=true}
+\usepackage{graphicx} % Pakket voor afbeeldingen
+
+\usepackage{hyperref}
+\usepackage[dvipsnames]{xcolor} 
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor= black,
+    pdfnewwindow=true, 
+    breaklinks=false,
+    pdftitle=Matijs-Peeters-Thesis-AI,
+    pdfauthor=Matijs Peeters
+}
+
 \usepackage{amsmath}
 \usepackage{geometry}% Pakket voor pagina-indeling
 \usepackage{amssymb} % griekse letters
@@ -28,19 +42,21 @@
 \usepackage{amsmath}        % Pakket voor vergelijkingen
 \usepackage{floatrow}
 \usepackage{rotating}
+\usepackage{array}
 \usepackage{pdfpages}
 \usepackage{multirow}
 \setlength\parindent{0pt}   % geen indent voor heel het document
 \floatsetup[table]{capposition=bottom}     % Pakket dat bovenschriften creëert bij tabellen ipv de standaard onderschriften.
 \usepackage{titlesec}
-\titleformat{\chapter}                             % command to format
+\titleformat{\chapter}[hang]                             % command to format
   {\normalfont\huge\bfseries}                      % format for the whole title
   {\thechapter}                                    % what to print as the label
   {1em}                                            % space between label and title
   {} 
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
 
 \usepackage[
-sorting=none,
+sorting=nty,
 style=apa,
 maxbibnames=99,
 backend=biber,
@@ -54,7 +70,7 @@ date=long,
 
 \usepackage{tgpagella}
 \usepackage[utf8]{inputenc}
-\usepackage{xcolor}
+
 \setlength{\tabcolsep}{2pt} % narrower column gap
 \setlength{\fboxsep}{1pt}   % minimal padding around images
 
@@ -83,21 +99,22 @@ date=long,
 \newpage
 
 \tableofcontents
-\addcontentsline{toc}{section}{Table of contents}
+
+\addcontentsline{toc}{chapter}{Contents}
 \input{1. Abstract}
 \newpage
 \listoffigures
-\addcontentsline{toc}{section}{Lijst van figuren}
+%\addcontentsline{toc}{section}{List of Figures}
 \listoftables
-\addcontentsline{toc}{section}{Lijst van tabellen}
+%\addcontentsline{toc}{section}{List of Tables}
 \newpage
 
 \input{2. Introduction}
-\input{3. Background}
+%\input{3. Background}
 \input{4. Literature}
 \input{5. Development}
 \input{6. Methodology}
-\input{7. Results}
+\input{7.Results}
 \input{8. Discussion}
 \input{9. Conclusion}
 \input{10. References}

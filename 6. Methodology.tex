@@ -6,10 +6,10 @@ The research questions are addressed via an exploratory study involving Flemish 
 
 \begin{itemize}
     \item Semi-structured \textbf{interviews} with one partner from each office, to identify and agree upon the specific mannerisms to be trained on (section \ref{sec:Interviews});
-    \item \textbf{Collecting} training datasets of images (section \ref{sec:Finalized training datasets});
+    \item \textbf{Collecting} datasets of images to train the LoRAs (section \ref{sec:Finalized training datasets});
     \item \textbf{verifying} those images with the architects (section \ref{sec:Finalized training datasets});
     \item \textbf{Training} LoRAs on these datasets (the methodology for training the LoRAs is explained in section \ref{sec:LoRA training methodology});
-    \item \textbf{Evaluating} the resulting LoRAs in two settings: a controlled design process and a freer application. (section \ref{sec:Evaluation sessions})
+    \item \textbf{Evaluating} the resulting LoRAs in two settings: a structured design process and an unstructured process. (section \ref{sec:Evaluation sessions})
 \end{itemize}
 \begin{figure}[H]
     \centering
@@ -25,7 +25,8 @@ The selection of the mannerisms was based on semi-structured interviews with the
 \section{Image selection and verification} \label{sec:Finalized training datasets}
 LoRA training requires a diverse collection of high-quality images that capture the concept in diverse environments, lightings and camera angles (\cite{deepfates_fine-tune_2024}).\\
 To ensure equal influence on the model, all images were resized to 1024 x 1024 px using the online image resizer BIRME (https://www.birme.net/), matching the default output format for FLUX.1. The end result of the collection phase was a selection of 15-19 images for each LoRA.\\~\\
-Prior to LoRA training, both architects reviewed the selected images through a google form, rating each image from 1 (poor representation of the concept) to 3 (clear representation). After a brief online call where the architects clarified their intentions, the image set was revised: certain images were removed and new ones added to better reflect the concept. The newly added images were not reviewed by the architects: it was assumed that the discussion had provided sufficient understanding of the architects' vision to select appropriate images.
+Prior to LoRA training, both architects reviewed the selected images through a google form, rating each image from 1 (poor representation of the concept) to 3 (clear representation). After a brief online call where the architects clarified their intentions, the image set was revised: certain images were removed and new ones added to better reflect the concept. The newly added images were not reviewed by the architects: it was assumed that the discussion had provided sufficient understanding of the architects' vision to select appropriate images.\\
+
 \subsection{Finalized datasets for DMOA}
 \subsubsection{Stampbeton}
 The first LoRA trained for the office of DMOA is meant to replicate the material stamped concrete ('stampbeton' in Dutch). The architects have developed and patented a specific mixture of materials to create their version of the material.\\
